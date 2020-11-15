@@ -82,8 +82,8 @@ Currently Git provides no standard interface to delete a submodule. To remove a 
 
 ```bash
 git submodule deinit -f mymodule
-rm -rf .git/modules/mymodule
 git rm -f mymodule
+rm -rf .git/modules/mymodule
 ```
 
 ## Credit
