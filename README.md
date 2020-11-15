@@ -37,7 +37,7 @@ git diff --cached --submodule
 
 ```bash
 # pull all changes in the repo including changes in the submodules
-git pull --recurse-submodules
+git pull --recurse-submodules origin master
 ```
 
 ```bash
