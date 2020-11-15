@@ -40,40 +40,15 @@ git diff --cached --submodule
 git pull --recurse-submodules
 ```
 
+```bash
+# push the submodules automatically (if necessary) before pushing the parent repo
+git push --recurse-submodules=on-demand
+```
+
 For executing a command on every submodule:
 
 ```bash
 git submodule foreach --recursive 'git reset --hard'
-```
-
-## Updating the Commit You are Tracking
-
-The following example shows how to update a submodule to its latest commit in its master branch.
-
-```bash
-# update submodule in the master branch
-# skip this if you use --recurse-submodules and have the master branch checked out
-cd [submodule directory]
-git checkout master
-git pull
-
-# commit the change in main repo to use the latest commit in master of the submodule
-cd ..
-git add [submodule directory]
-git commit -m "move submodule to latest commit in master"
-
-# share your changes
-git push
-```
-
-Another developer can get the update by pulling in the changes and running the `submodules` update command.
-
-```bash
-# another developer wants to get the changes
-git pull
-
-# this updates the submodule to the latest commit in master as set in the last example
-git submodule update
 ```
 
 ## Delete a Submodule
@@ -91,3 +66,4 @@ rm -rf .git/modules/mymodule
 - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
 - [Git Tools - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 - [git-submodule](https://git-scm.com/docs/git-submodule)
+- [Git submodules](http://dan.mccloy.info/2015/06/11/Git-submodules/)
