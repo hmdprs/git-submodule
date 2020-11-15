@@ -19,13 +19,7 @@ git submodule add -b master [URL to Git repo]
 git submodule init
 ```
 
-```bash
-# update the submodule to the commit described by the branch
-git submodule update --remote
-```
-
 ## Working with Repositories that contain Submodules
-
 
 ```bash
 # clone a repository including its submodules
@@ -38,11 +32,12 @@ git submodule update --init --recursive
 ```
 
 ```bash
+git diff --cached --submodule
+```
+
+```bash
 # pull all changes in the repo including changes in the submodules
 git pull --recurse-submodules
-
-# pull all changes for the submodules
-git submodule update --remote
 ```
 
 For executing a command on every submodule:
@@ -94,4 +89,5 @@ git rm -f mymodule
 ## Credit
 
 - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
+- [Git Tools - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 - [git-submodule](https://git-scm.com/docs/git-submodule)
